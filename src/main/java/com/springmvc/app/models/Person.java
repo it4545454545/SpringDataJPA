@@ -36,7 +36,7 @@ public class Person {
         this.fio = fio;
     }
 
-    public     @DateTimeFormat(pattern = "yyyy.MM.dd") LocalDate getBd() {
+    public @DateTimeFormat(pattern = "yyyy.MM.dd") LocalDate getBd() {
         return bd;
     }
 
