@@ -20,8 +20,8 @@
     <div style="color:orange" th:if="${#fields.hasErrors('author')}" th:errors="*{author}">etot text budet zamenen ili skrit</div>
     <br/>
     <label for="person_id">Enter Person: </label>
-    <input type="text" th:field="*{person_id}" id="person_id"/>
-    <div style="color:orange" th:if="${#fields.hasErrors('person_id')}" th:errors="*{person_id}">etot text budet zamenen ili skrit</div>
+    <input type="text" th:field="*{person_name}" id="person_id"/>
+    <div style="color:orange" th:if="${#fields.hasErrors('person_id')}" th:errors="*{person_name}">etot text budet zamenen ili skrit</div>
     <br/>
     <input type="submit" value="Update!"/>
 </form>

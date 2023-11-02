@@ -6,8 +6,10 @@
 </head>
 <body>
 <a th:href="@{/books/{id}(id=${book.getId()})}"
-   th:text="${book.getTitle() + ', '+ book.getAuthor()+', Person ID:' + book.person_id +', '+ book.getIssueDate()}">book</a>
-
+   th:text="${book.getTitle() + ', '+ book.getAuthor()+', Person ID:' + book.person_name +', '+ book.getIssueDate()}">book</a> <br/>
+<a th:href="@{/people/{id}(id=${booksPerson.getId()})}"
+   th:text="${booksPerson.getFio()}">text</a> <br/>
+<a th:text="${booksPersonEmpty}">text of empty</a>
 <a th:href="@{/books/{id}/edit(id=${book.getId()})}">Edit</a>
 
 <form th:method="DELETE" th:action="@{/books/{id}(id=${book.getId()})}">

@@ -8,7 +8,7 @@
 
 <div th:each="book : ${books}">
     <a th:href="@{/books/{id}(id=${book.getId()})}"
-       th:text="${book.getTitle() + ', '+ book.getAuthor()+', Person ID:' + book.person_id +', '+ book.getIssueDate()}">book</a>
+       th:text="${book.getTitle() + ', '+ book.getAuthor()+', Person ID:' + book.getPerson_name() +', '+ book.getIssueDate()}">book</a>
 </div>
 
 <br/>

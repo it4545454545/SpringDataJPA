@@ -1,5 +1,6 @@
 package com.springmvc.app.dao;
 
+import com.springmvc.app.models.Book;
 import com.springmvc.app.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -35,6 +36,10 @@ public class PersonDAO {
     }
     public void delete(int id) {
         jdbcTemplate.update("DELETE FROM Person WHERE id = ?", id);
+    }
+
+    public List<Book> showPersonsBooks(int id) {
+        return jdbcTemplate.query("SELECT * FROM Book WHERE person_id = ?", new Object[]{id}, new BookMapper());
     }
 
 }

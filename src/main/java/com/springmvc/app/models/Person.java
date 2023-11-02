@@ -43,4 +43,5 @@ public class Person {
     public void setBd(LocalDate bd) {
         this.bd = bd;
     }
+
 }

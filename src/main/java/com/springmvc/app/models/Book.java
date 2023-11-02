@@ -7,15 +7,7 @@ import java.time.LocalDate;
 
 public class Book {
     private int id;
-    private int person_id;
-
-    public Book(int id, int person_id, String title, String author, LocalDate issueDate) {
-        this.id = id;
-        this.person_id = person_id;
-        this.title = title;
-        this.author = author;
-        this.issueDate = issueDate;
-    }
+    private String person_name;
 
     @NotEmpty
     private String title;
@@ -24,7 +16,9 @@ public class Book {
     @DateTimeFormat(pattern = "yyyy.MM.dd")
     private LocalDate issueDate;
 
-    public Book(){}
+    public Book() {
+    }
+
     public int getId() {
         return id;
     }
@@ -33,12 +27,12 @@ public class Book {
         this.id = id;
     }
 
-    public int getPerson_id() {
-        return person_id;
+    public String getPerson_name() {
+        return this.person_name;
     }
 
-    public void setPerson_id(int person_id) {
-        this.person_id = person_id;
+    public void setPerson_name(String person_idw) {
+        this.person_name = person_idw;
     }
 
     public String getTitle() {
@@ -64,6 +58,5 @@ public class Book {
     public void setIssueDate(LocalDate issueDate) {
         this.issueDate = issueDate;
     }
-
 
 }

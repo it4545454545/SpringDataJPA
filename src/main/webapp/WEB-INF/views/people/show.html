@@ -2,14 +2,18 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Show</title>
+    <title>Show Person</title>
 </head>
 <body>
 <p th:text="${person.getFio() + ', ' + person.getBd()}">VALUE</p>
 <p th:text="${person.getId()}">VALUE</p>
 
 <a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a>
-
+<div th:each="book : ${personsBooks}">
+    <a th:href="@{/books/{id}(id=${book.getId()})}"
+       th:text="${book.getTitle() + ', '+ book.getAuthor()+',' + book.person_name +', '+ book.getIssueDate()}">book</a>
+</div>
+<p th:text="${personsBooksEmpty}">asd</p>
 <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
     <input type="submit" value="Delete"/>
 </form>

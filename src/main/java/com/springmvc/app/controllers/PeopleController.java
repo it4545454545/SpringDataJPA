@@ -33,6 +33,10 @@ public class PeopleController {
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
         model.addAttribute("person", personDAO.show(id));
+        if (personDAO.showPersonsBooks(id).isEmpty()){
+            model.addAttribute("personsBooksEmpty", "U dannoi persony net vzyatykh knig");
+        }
+        model.addAttribute("personsBooks", personDAO.showPersonsBooks(id));
         return "people/show";
     }
 

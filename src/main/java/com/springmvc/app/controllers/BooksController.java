@@ -33,7 +33,6 @@ public class BooksController {
         model.addAttribute("book", bookDAO.show(id));
         return "books/show";
     }
-
     @GetMapping("/new")
     public String newbook(@ModelAttribute("book") Book book) {
         return "books/new";
