@@ -36,10 +36,8 @@ public class BooksController {
     public String show(@PathVariable("id") int id, Model model, @ModelAttribute("person")Person person) {
         Book book = bookDAO.show(id);
         model.addAttribute("book", book);
-        if (book.getPerson_name().equals("Kniga ne prinadlejit nikomy")){
-            model.addAttribute("emptyPerson", person);
+        if (book.getPerson_name() == null){
             model.addAttribute("peopleToAssign", personDAO.index());
-            model.addAttribute("assignText", "Viberite person to assign");
         }
         return "books/show";
     }

@@ -36,7 +36,7 @@ public class BookMapper implements RowMapper<Book> {
         book.setAuthor(resultSet.getString("author"));
         if (personDAO != null){
             int personResult = resultSet.getInt("person_id");
-            if (resultSet.wasNull()) book.setPerson_name("Kniga ne prinadlejit nikomy");
+            if (resultSet.wasNull()) book.setPerson_name(null);
             else {book.setPerson_name(personDAO.show(personResult).getFio());}
         }
         return book;

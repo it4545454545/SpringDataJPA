@@ -5,8 +5,8 @@
     <title>Show</title>
 </head>
 <body>
-<a th:href="@{/books/{id}(id=${book.getId()})}"
-   th:text="${book.getTitle() + ', '+ book.getAuthor()+', Person ID:' + book.getPerson_name() +', '+ book.getIssueDate()}">book</a> <br/>
+<span th:text="'ID: '+ ${book.getId}"></span><br/>
+<span th:text="'Title: '${book.getTitle() + '\n, '+ book.getAuthor()+', Person ID:' + book.getPerson_name() +', '+ book.getIssueDate()}">book</span> <br/>
 
 <a th:href="@{/books/{id}/edit(id=${book.getId()})}">Edit</a>
 
@@ -19,7 +19,7 @@
 </form> <br/>
 <form th:method="PATCH" th:action="@{/books/{id}/assign(id=${book.getId()})}">
 <p th:text="${assignText}">assignText</p>
-    <select id="assign" th:object="${emptyPerson}" th:field="*{id}">
+    <select th:object="${person}" th:field="*{id}">
         <option th:each="person : ${peopleToAssign}" th:value="${person.getId()}"
         th:text="${person.getFio()}"></option>
     </select>
