@@ -26,9 +26,6 @@ public class BookValidator implements Validator {
     public void validate(Object o, Errors errors) {
         Book book = (Book) o;
 
-        //est li takoi book v bd c email
-//        if (bookDAO.show(book.getEmail()).isPresent()){
-//            errors.rejectValue("email","","this email is already taken");
     }
 
 }

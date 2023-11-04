@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="icon" href="/favicon.png"/>
     <meta charset="UTF-8">
     <title>Show Person</title>
 </head>
 <body>
 <p th:text="${person.getFio() + ', ' + person.getBd()}">VALUE</p>
+<p th:text="${person.getId()}">VALUE</p>
 <p th:text="${person.getId()}">VALUE</p>
 
 <a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a>
@@ -18,5 +20,13 @@
 <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
     <input type="submit" value="Delete"/>
 </form>
+<br/>
+Books bound:
+<br/>
+<div th:each="book : ${bookList}">
+    <a th:href="@{/books/{id}(id=${book.getId()})}"
+       th:text="${book.getTitle() + ', '+ book.getAuthor()+', Person ID:' + book.person_id +', '+ book.getIssueDate()}">book</a>
+</div>
+<p th:text="${bookListEmpty}"></p>
 </body>
 </html>
