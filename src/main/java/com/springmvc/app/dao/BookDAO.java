@@ -23,7 +23,7 @@ public class BookDAO {
     }
 
     public Book show(int id) {
-        return jdbcTemplate.query("SELECT * FROM Book WHERE id=?", new Object[]{id}, new BookMapper()).stream().findAny().orElse(null);
+        return jdbcTemplate.query("SELECT * FROM Book WHERE id=?", new Object[]{id}, new BookMapper(personDAO)).stream().findAny().orElse(null);
     }
 
     public void save(Book book) {
@@ -39,5 +39,10 @@ public class BookDAO {
         jdbcTemplate.update("DELETE FROM Book WHERE id = ?", id);
     }
 
-
+    public void releaseBook(int bookId){
+        jdbcTemplate.update("UPDATE Book SET person_id=null WHERE id =?", bookId);
+    }
+    public void assignPersonToBook(int bookId, int personId){
+        jdbcTemplate.update("UPDATE Book SET person_id=? WHERE id=?", personId,bookId);
+    }
 }
