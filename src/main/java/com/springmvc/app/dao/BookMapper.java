@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 
 /**
  * @author Ivan L
@@ -32,7 +31,7 @@ public class BookMapper implements RowMapper<Book> {
 
         book.setId(resultSet.getInt("id"));
         book.setTitle(resultSet.getString("title"));
-        book.setIssueDate(LocalDate.parse(resultSet.getString("date")));
+        book.setIssueDate(resultSet.getString("date"));
         book.setAuthor(resultSet.getString("author"));
         if (personDAO != null){
             int personResult = resultSet.getInt("person_id");

@@ -1,9 +1,7 @@
 package com.springmvc.app.models;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.validation.constraints.NotEmpty;
-import java.time.LocalDate;
+import javax.validation.constraints.Pattern;
 
 public class Book {
     private int id;
@@ -13,8 +11,8 @@ public class Book {
     private String title;
     @NotEmpty
     private String author;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate issueDate;
+    @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}", message = "The format must be 2022-09-29")
+    private String issueDate;
 
     public Book() {
     }
@@ -51,11 +49,11 @@ public class Book {
         this.author = author;
     }
 
-    public @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate getIssueDate() {
+    public String getIssueDate() {
         return issueDate;
     }
 
-    public void setIssueDate(LocalDate issueDate) {
+    public void setIssueDate(String issueDate) {
         this.issueDate = issueDate;
     }
 

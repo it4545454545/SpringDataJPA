@@ -1,20 +1,18 @@
 package com.springmvc.app.models;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-import java.time.LocalDate;
 
 public class Person {
     private int id;
-    @NotEmpty(message = "ALO NE PUSTOE")
-    @Size(min=2,max=30, message = "ot 2 do 30 bukv")
+    @NotEmpty(message = "Can not be empty, Min 2 - Max 50 symbols")
+    @Size(min=2,max=50, message = "Min 2 - Max 50 symbols")
     private String fio;
-    @DateTimeFormat(pattern = "yyyy.MM.dd")
-    private LocalDate bd;
+    @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}", message = "The format must be 2022-09-29")
+    private String bd;
     public Person() {}
-    public Person(int id, String name, LocalDate bd) {
+    public Person(int id, String name, String bd) {
         this.id = id;
         this.fio = name;
         this.bd = bd;
@@ -36,11 +34,11 @@ public class Person {
         this.fio = fio;
     }
 
-    public @DateTimeFormat(pattern = "yyyy.MM.dd") LocalDate getBd() {
+    public String getBd() {
         return bd;
     }
 
-    public void setBd(LocalDate bd) {
+    public void setBd(String bd) {
         this.bd = bd;
     }
 

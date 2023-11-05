@@ -6,8 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
-import java.util.regex.Pattern;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Component
 public class BookValidator implements Validator {
@@ -27,14 +31,19 @@ public class BookValidator implements Validator {
     @Override
     public void validate(Object o, Errors errors) {
         Book book = (Book) o;
-        if(!isValidDateFormat(errors.getFieldError().getField())){
-            errors.rejectValue("issueDate","","WRONG FORMAT");
+        if (!errors.hasErrors()) {
+            if (!isValidDateFormat((String) errors.getFieldValue("issueDate"))) {
+                errors.rejectValue("issueDate", "", "Format must be 2022-01-09 (year-month-day)");
+            }
         }
-
-
     }
 
     private boolean isValidDateFormat(String date) {
+        try {
+            LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        } catch (DateTimeParseException ex) {
+            return false;
+        }
         Pattern pattern = Pattern.compile(DATE_FORMAT_REGEX);
         Matcher matcher = pattern.matcher(date);
         return matcher.matches();
