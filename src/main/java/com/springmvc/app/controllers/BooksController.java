@@ -26,6 +26,8 @@ public class BooksController {
         this.bookValidator = bookValidator;
         this.personDAO = personDAO;
     }
+    @GetMapping("/favicon.ico")
+        public String fav(){return "forward:/favicon.ico";}
     @GetMapping()
     public String index(Model model) {
         model.addAttribute("books", bookDAO.index());
@@ -42,13 +44,13 @@ public class BooksController {
         return "books/show";
     }
     @GetMapping("/new")
-    public String newbook(@ModelAttribute("book") Book book) {
+    public String newBook(@ModelAttribute("book") Book book) {
         return "books/new";
     }
 
     @PostMapping()
     public String create(@ModelAttribute("book")@Valid Book book, BindingResult bindingResult) {
-//        bookValidator.validate(book, bindingResult);
+      bookValidator.validate(book, bindingResult);
         if(bindingResult.hasErrors()) return "books/new";
         bookDAO.save(book);
         return "redirect:/books";

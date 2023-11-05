@@ -13,7 +13,7 @@ public class Book {
     private String title;
     @NotEmpty
     private String author;
-    @DateTimeFormat(pattern = "yyyy.MM.dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate issueDate;
 
     public Book() {
@@ -51,7 +51,7 @@ public class Book {
         this.author = author;
     }
 
-    public @DateTimeFormat(pattern = "yyyy.MM.dd") LocalDate getIssueDate() {
+    public @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate getIssueDate() {
         return issueDate;
     }
 

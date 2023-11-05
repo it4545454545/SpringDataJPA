@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="icon" href="/favicon.png"/>
+    <link rel="icon" href="/static/favicon.ico"/>
     <meta charset="UTF-8">
     <title>New book</title>
 </head>
@@ -17,11 +17,6 @@
     <label for="date">Enter date: </label>
     <input type="text" th:field="*{issueDate}" id="date"/>
     <div style="color:orange" th:if="${#fields.hasErrors('issueDate')}" th:errors="*{issueDate}">etot text budet zamenen ili skrit</div>
-    <br/>
-
-    <label for="person_id">Enter person_id: </label>
-    <input type="text" th:field="*{person_name}" id="person_id"/>
-    <div style="color:orange" th:if="${#fields.hasErrors('person_id')}" th:errors="*{person_name}">etot text budet zamenen ili skrit</div>
     <br/>
 
     <label for="author">Enter author: </label>
