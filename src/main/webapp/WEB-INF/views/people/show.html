@@ -6,27 +6,21 @@
     <title>Show Person</title>
 </head>
 <body>
-<p th:text="${person.getFio() + ', ' + person.getBd()}">VALUE</p>
-<p th:text="${person.getId()}">VALUE</p>
-<p th:text="${person.getId()}">VALUE</p>
+<span th:utext="'ID: ' + ${person.getId()} + '<br/>FIO: ' + ${person.getFio()}
++ '<br/>Birthdate: ' + ${person.getBd()}"></span><br/>
 
-<a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a>
+<a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a><br/>
 
-<div th:each="book : ${personsBooks}">
-    <a th:href="@{/books/{id}(id=${book.getId()})}"
-       th:text="${book.getTitle() + ', '+ book.getAuthor()+',' + book.getIssueDate()}">book</a>
-</div>
-<p th:text="${personsBooksEmpty}">asd</p>
+<!--<p th:text="${personsBooksEmpty}">asd</p>-->
 <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
     <input type="submit" value="Delete"/>
 </form>
 <br/>
-Books bound:
-<br/>
-<div th:each="book : ${bookList}">
+<span th:utext="${not personsBooks.isEmpty() ? 'Books bound:<br/>' : 'No books are bound'}"></span><br/>
+<div th:each="book : ${personsBooks}">
     <a th:href="@{/books/{id}(id=${book.getId()})}"
-       th:text="${book.getTitle() + ', '+ book.getAuthor()+', Person ID:' + book.person_id +', '+ book.getIssueDate()}">book</a>
+       th:utext="'Title: ' + ${book.getTitle()} + '<br/>Author: ' + ${book.getAuthor()} + '<br/>Issue date: ' + ${book.getIssueDate()}">book</a><div style="height: 10px;"></div>
 </div>
-<p th:text="${bookListEmpty}"></p>
+
 </body>
 </html>

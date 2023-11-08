@@ -9,9 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07b9acd2-8942-4242-86d1-490c304cc8a9" name="Changes" comment="sync1">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="07b9acd2-8942-4242-86d1-490c304cc8a9" name="Changes" comment="ip">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/util/BookValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvc/app/util/BookValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/util/PersonValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvc/app/util/PersonValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/show.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +191,7 @@
       <workItem from="1698954319553" duration="7574000" />
       <workItem from="1699106243183" duration="8429000" />
       <workItem from="1699138546397" duration="8699000" />
-      <workItem from="1699474044184" duration="475000" />
+      <workItem from="1699474044184" duration="4454000" />
     </task>
     <task id="LOCAL-00001" summary="Classes: Person&#10;DB: person(fio,birthdate)">
       <option name="closed" value="true" />
@@ -238,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699131189409</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ip">
+      <option name="closed" value="true" />
+      <created>1699474557241</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1699474557242</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +271,8 @@
     <MESSAGE value="Persons, Books (edit)" />
     <MESSAGE value="Realizacia Pokaza persons u knig" />
     <MESSAGE value="sync" />
-    <option name="LAST_COMMIT_MESSAGE" value="sync" />
+    <MESSAGE value="ip" />
+    <option name="LAST_COMMIT_MESSAGE" value="ip" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

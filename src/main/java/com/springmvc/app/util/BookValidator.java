@@ -15,13 +15,13 @@ import java.util.regex.Pattern;
 
 @Component
 public class BookValidator implements Validator {
-    private final BookDAO bookDAO;
-    private static final String DATE_FORMAT_REGEX = "^\\d{4}-\\d{2}-\\d{2}$"; // Паттерн для формата yyyy-MM-dd
+//    private final BookDAO bookDAO;
+//    private static final String DATE_FORMAT_REGEX = "^\\d{4}-\\d{2}-\\d{2}$";
 
-    @Autowired
-    public BookValidator(BookDAO bookDAO) {
-        this.bookDAO = bookDAO;
-    }
+//    @Autowired
+//    public BookValidator(BookDAO bookDAO) {
+//        this.bookDAO = bookDAO;
+//    }
 
     @Override
     public boolean supports(Class<?> aClass) {
@@ -30,10 +30,10 @@ public class BookValidator implements Validator {
 
     @Override
     public void validate(Object o, Errors errors) {
-        Book book = (Book) o;
+//        Book book = (Book) o;
         if (!errors.hasErrors()) {
             if (!isValidDateFormat((String) errors.getFieldValue("issueDate"))) {
-                errors.rejectValue("issueDate", "", "Format must be 2022-01-09 (year-month-day)");
+                errors.rejectValue("issueDate", "", "Invalid date. Also, the format must be 2022-01-09 (year-month-day)");
             }
         }
     }
@@ -44,8 +44,9 @@ public class BookValidator implements Validator {
         } catch (DateTimeParseException ex) {
             return false;
         }
-        Pattern pattern = Pattern.compile(DATE_FORMAT_REGEX);
-        Matcher matcher = pattern.matcher(date);
-        return matcher.matches();
+//        Pattern pattern = Pattern.compile(DATE_FORMAT_REGEX);
+//        Matcher matcher = pattern.matcher(date);
+//        return matcher.matches();
+        return true;
     }
 }
