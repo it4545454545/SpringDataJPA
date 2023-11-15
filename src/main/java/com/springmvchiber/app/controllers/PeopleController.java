@@ -1,8 +1,8 @@
-package com.springmvc.app.controllers;
+package com.springmvchiber.app.controllers;
 
-import com.springmvc.app.dao.PersonDAO;
-import com.springmvc.app.models.Person;
-import com.springmvc.app.util.PersonValidator;
+import com.springmvchiber.app.dao.PersonDAO;
+import com.springmvchiber.app.models.Person;
+import com.springmvchiber.app.util.PersonValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

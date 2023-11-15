@@ -1,6 +1,6 @@
-package com.springmvc.app.dao;
+package com.springmvchiber.app.dao;
 
-import com.springmvc.app.models.Book;
+import com.springmvchiber.app.models.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;

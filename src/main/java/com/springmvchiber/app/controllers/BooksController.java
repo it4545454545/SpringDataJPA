@@ -1,10 +1,10 @@
-package com.springmvc.app.controllers;
+package com.springmvchiber.app.controllers;
 
-import com.springmvc.app.dao.BookDAO;
-import com.springmvc.app.dao.PersonDAO;
-import com.springmvc.app.models.Book;
-import com.springmvc.app.models.Person;
-import com.springmvc.app.util.BookValidator;
+import com.springmvchiber.app.dao.BookDAO;
+import com.springmvchiber.app.dao.PersonDAO;
+import com.springmvchiber.app.models.Book;
+import com.springmvchiber.app.models.Person;
+import com.springmvchiber.app.util.BookValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,7 +35,7 @@ public class BooksController {
     }
 
     @GetMapping("/{id}")
-    public String show(@PathVariable("id") int id, Model model, @ModelAttribute("person")Person person) {
+    public String show(@PathVariable("id") int id, Model model, @ModelAttribute("person") Person person) {
         Book book = bookDAO.show(id);
         model.addAttribute("book", book);
         if (book.getPerson_name() == null){

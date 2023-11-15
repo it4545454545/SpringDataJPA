@@ -1,4 +1,4 @@
-package com.springmvc.app.models;
+package com.springmvchiber.app.models;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;

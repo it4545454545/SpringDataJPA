@@ -9,7 +9,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07b9acd2-8942-4242-86d1-490c304cc8a9" name="Changes" comment="Person + Books validators" />
+    <list default="true" id="07b9acd2-8942-4242-86d1-490c304cc8a9" name="Changes" comment="Person + Books validators">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/config/MySpringMVCDispatcherServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/config/MySpringMVCDispatcherServletInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/config/SpringConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/controllers/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/controllers/BooksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/controllers/PeopleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/dao/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/dao/BookDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/dao/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/dao/BookMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/dao/PersonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/dao/PersonMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/dao/PersonMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/models/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/util/BookValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/util/BookValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/util/PersonValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/util/PersonValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,9 +74,9 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -186,6 +205,11 @@
       <workItem from="1699106243183" duration="8429000" />
       <workItem from="1699138546397" duration="8699000" />
       <workItem from="1699474044184" duration="4606000" />
+      <workItem from="1700080298789" duration="234000" />
+      <workItem from="1700081095778" duration="169000" />
+      <workItem from="1700081279781" duration="913000" />
+      <workItem from="1700082209982" duration="30000" />
+      <workItem from="1700082249668" duration="1620000" />
     </task>
     <task id="LOCAL-00001" summary="Classes: Person&#10;DB: person(fio,birthdate)">
       <option name="closed" value="true" />
