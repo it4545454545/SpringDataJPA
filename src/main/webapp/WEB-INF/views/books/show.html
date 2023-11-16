@@ -9,7 +9,7 @@
 <span th:text="'ID: '+ ${book.getId()}"></span><br/>
 <span th:utext="'Title: ' + ${book.getTitle()} + '<br/>Author: '
 + ${book.getAuthor()} + '<br/>Person ID: '
-+ ${book.getPerson_name() != null ? book.getPerson_name() : 'No person assigned'}
++ ${book.getPersonOfBook() != null ? book.getPersonOfBook().getFio() : 'No person assigned'}
 + '<br/>Issue date: ' + ${book.getIssueDate()}"></span><br/>
 
 <a th:href="@{/books/{id}/edit(id=${book.getId()})}">Edit</a>
@@ -17,10 +17,11 @@
 <form th:method="DELETE" th:action="@{/books/{id}(id=${book.getId()})}">
     <input type="submit" value="Delete"/>
 </form>
-<form th:method="PATCH" th:action="@{/books/{id}/release(id=${book.getId()})}">
+<form th:if="${book.getPersonOfBook() != null}"
+      th:method="PATCH" th:action="@{/books/{id}/release(id=${book.getId()})}">
     <input type="submit" value="Release the book"/>
 </form>
-<form th:if="${book.getPerson_name() == null}" th:method="PATCH" th:action="@{/books/{id}/assign(id=${book.getId()})}">
+<form th:if="${book.getPersonOfBook() == null}" th:method="PATCH" th:action="@{/books/{id}/assign(id=${book.getId()})}">
     <label for="person"></label>
     <select id="person" th:object="${person}" th:field="*{id}">
         <option th:each="person : ${peopleToAssign}" th:value="${person.getId()}"

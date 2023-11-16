@@ -38,7 +38,7 @@ public class BooksController {
     public String show(@PathVariable("id") int id, Model model, @ModelAttribute("person") Person person) {
         Book book = bookDAO.show(id);
         model.addAttribute("book", book);
-        if (book.getPerson_name() == null){
+        if (book.getPersonOfBook() == null){
             model.addAttribute("peopleToAssign", personDAO.index());
         }
         return "books/show";

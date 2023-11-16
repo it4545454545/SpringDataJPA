@@ -4,8 +4,10 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.util.List;
+
 @Entity
-@Table(name = "Person")
+@Table(name = "person")
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +20,9 @@ public class Person {
     @Column(name = "birthdate")
     @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}", message = "The format must be 2022-09-29")
     private String bd;
+
+    @OneToMany(mappedBy = "personOfBook")
+    List<Book> booksOfPerson;
     public Person() {}
     public Person(int id, String name, String bd) {
         this.id = id;
@@ -49,4 +54,11 @@ public class Person {
         this.bd = bd;
     }
 
+    public List<Book> getBooksOfPerson() {
+        return booksOfPerson;
+    }
+
+    public void setBooksOfPerson(List<Book> booksOfPerson) {
+        this.booksOfPerson = booksOfPerson;
+    }
 }

@@ -9,25 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07b9acd2-8942-4242-86d1-490c304cc8a9" name="Changes" comment="Person + Books validators">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="07b9acd2-8942-4242-86d1-490c304cc8a9" name="Changes" comment="First commit, laptop">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/config/MySpringMVCDispatcherServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/config/MySpringMVCDispatcherServletInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/config/SpringConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/controllers/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/controllers/BooksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/controllers/PeopleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/dao/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/dao/BookDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/dao/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/dao/BookMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/dao/PersonDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/dao/PersonMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/dao/PersonMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/models/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/util/BookValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/util/BookValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/app/util/PersonValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/util/PersonValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/controllers/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/controllers/BooksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/dao/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/dao/BookDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/dao/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/dao/BookMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/dao/PersonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/dao/PersonMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/dao/PersonMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/models/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/models/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/show.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +200,8 @@
       <workItem from="1700081095778" duration="169000" />
       <workItem from="1700081279781" duration="913000" />
       <workItem from="1700082209982" duration="30000" />
-      <workItem from="1700082249668" duration="1620000" />
+      <workItem from="1700082249668" duration="1875000" />
+      <workItem from="1700163019356" duration="8233000" />
     </task>
     <task id="LOCAL-00001" summary="Classes: Person&#10;DB: person(fio,birthdate)">
       <option name="closed" value="true" />
@@ -275,7 +267,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699478625531</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="First commit, laptop">
+      <option name="closed" value="true" />
+      <created>1700084103013</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1700084103013</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,7 +299,29 @@
     <MESSAGE value="sync" />
     <MESSAGE value="ip" />
     <MESSAGE value="Person + Books validators" />
-    <option name="LAST_COMMIT_MESSAGE" value="Person + Books validators" />
+    <MESSAGE value="First commit, laptop" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit, laptop" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springmvchiber/app/models/Book.java</url>
+          <line>39</line>
+          <properties class="com.springmvchiber.app.models.Book" method="getPersonOfBook">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springmvchiber/app/models/Person.java</url>
+          <line>24</line>
+          <properties field="booksOfPerson" class="com.springmvchiber.app.models.Person" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
