@@ -1,8 +1,8 @@
-package com.springmvchiber.app.controllers;
+package com.springjpa.app.controllers;
 
-import com.springmvchiber.app.dao.PersonDAO;
-import com.springmvchiber.app.models.Person;
-import com.springmvchiber.app.util.PersonValidator;
+import com.springjpa.app.services.PeopleService;
+import com.springjpa.app.util.PersonValidator;
+import com.springjpa.app.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,28 +15,28 @@ import javax.validation.Valid;
 @RequestMapping("/people")
 public class PeopleController {
 
-    private final PersonDAO personDAO;
+    private PeopleService peopleService;
     private final PersonValidator personValidator;
 
     @Autowired
-    public PeopleController(PersonDAO personDAO, PersonValidator personValidator) {
-        this.personDAO = personDAO;
+    public PeopleController(PeopleService peopleService, PersonValidator personValidator) {
+        this.peopleService = peopleService;
         this.personValidator = personValidator;
     }
 
     @GetMapping()
     public String index(Model model) {
-        model.addAttribute("people", personDAO.index());
+        model.addAttribute("people", peopleService.findAll());
         return "people/index";
     }
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
-        model.addAttribute("person", personDAO.show(id));
-        if (personDAO.showPersonsBooks(id).isEmpty()){
-            model.addAttribute("personsBooksEmpty", "U dannoi persony net vzyatykh knig");
-        }
-        model.addAttribute("personsBooks", personDAO.showPersonsBooks(id));
+        model.addAttribute("person", peopleService.findOne(id));
+//        if (peopleService.showPersonsBooks(id).isEmpty()){
+//            model.addAttribute("personsBooksEmpty", "U dannoi persony net vzyatykh knig");
+//        }
+//        model.addAttribute("personsBooks", personDAO.showPersonsBooks(id));
         return "people/show";
     }
 
@@ -46,16 +46,16 @@ public class PeopleController {
     }
 
     @PostMapping()
-    public String create(@ModelAttribute("person")@Valid Person person, BindingResult bindingResult) {
+    public String create(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult) {
         personValidator.validate(person, bindingResult);
-        if(bindingResult.hasErrors()) return "people/new";
-        personDAO.save(person);
+        if (bindingResult.hasErrors()) return "people/new";
+        peopleService.save(person);
         return "redirect:/people";
     }
 
     @GetMapping("/{id}/edit")
     public String edit(Model model, @PathVariable("id") int id) {
-        model.addAttribute("person", personDAO.show(id));
+        model.addAttribute("person", peopleService.findOne(id));
         return "people/edit";
     }
 
@@ -63,14 +63,16 @@ public class PeopleController {
     public String update(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult, @PathVariable("id") int id) {
         personValidator.validate(person, bindingResult);
 
-        if(bindingResult.hasErrors()){return "people/edit";}
-        personDAO.update(id, person);
+        if (bindingResult.hasErrors()) {
+            return "people/edit";
+        }
+        peopleService.update(id, person);
         return "redirect:/people";
     }
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id) {
-        personDAO.delete(id);
+        peopleService.delete(id);
         return "redirect:/people";
     }
 }

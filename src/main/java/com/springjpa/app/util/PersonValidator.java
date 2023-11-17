@@ -1,6 +1,6 @@
-package com.springmvchiber.app.util;
+package com.springjpa.app.util;
 
-import com.springmvchiber.app.models.Person;
+import com.springjpa.app.models.Person;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;

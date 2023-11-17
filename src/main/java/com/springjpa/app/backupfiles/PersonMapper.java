@@ -1,6 +1,6 @@
-//package com.springmvchiber.app.dao;
+//package com.springjpa.app.dao;
 //
-//import com.springmvchiber.app.models.Person;
+//import models.com.springjpa.app.Person;
 //import org.springframework.jdbc.core.RowMapper;
 //
 //import java.sql.ResultSet;

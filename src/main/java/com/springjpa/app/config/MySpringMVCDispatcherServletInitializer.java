@@ -1,4 +1,4 @@
-package com.springmvchiber.app.config;
+package com.springjpa.app.config;
 
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;

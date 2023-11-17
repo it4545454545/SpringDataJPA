@@ -1,4 +1,4 @@
-package com.springmvchiber.app.models;
+package com.springjpa.app.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
