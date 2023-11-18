@@ -10,25 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07b9acd2-8942-4242-86d1-490c304cc8a9" name="Changes" comment="First commit, laptop">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/repositories/BooksRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/repositories/PeopleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/services/BooksService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/services/PeopleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/backupfiles/BookMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/backupfiles/BookMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/backupfiles/PersonMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/backupfiles/PersonMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/config/MySpringMVCDispatcherServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/config/MySpringMVCDispatcherServletInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/config/SpringConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/controllers/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/controllers/BooksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/controllers/PeopleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/dao/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/backupfiles/BookDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/backupfiles/PersonDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/models/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/util/BookValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/util/BookValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvchiber/app/util/PersonValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/util/PersonValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springjpa/app/controllers/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/controllers/BooksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springjpa/app/controllers/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/controllers/PeopleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springjpa/app/repositories/BooksRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/repositories/BooksRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springjpa/app/repositories/PeopleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/repositories/PeopleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springjpa/app/services/BooksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/services/BooksService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,6 +206,8 @@
       <workItem from="1700163019356" duration="8233000" />
       <workItem from="1700248370411" duration="4587000" />
       <workItem from="1700253922352" duration="2145000" />
+      <workItem from="1700332309782" duration="42000" />
+      <workItem from="1700332365636" duration="6800000" />
     </task>
     <task id="LOCAL-00001" summary="Classes: Person&#10;DB: person(fio,birthdate)">
       <option name="closed" value="true" />
@@ -322,25 +311,11 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/springjpa/app/models/Book.java</url>
-          <line>39</line>
-          <properties class="com.springjpa.app.models.Book" method="getPersonOfBook">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/com/springjpa/app/models/Person.java</url>
           <line>24</line>
           <properties field="booksOfPerson" class="com.springjpa.app.models.Person" />
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/springjpa/app/services/BooksService.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

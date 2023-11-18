@@ -53,6 +53,11 @@ public class BooksService {
         return booksRepository.findByPersonOfBook(person);
         }
 
+    @Transactional
+    public void updateColumnValue(int bookId, Person newValue) {
+        booksRepository.updateColumn(bookId, newValue);
+    }
+
         public void test(){
             System.out.println("f");
         }

@@ -31,7 +31,6 @@ public class BooksController {
     @GetMapping()
     public String index(Model model) {
         model.addAttribute("books", booksService.findAll());
-        booksService.test();
         return "books/index";
     }
 
@@ -80,12 +79,13 @@ public class BooksController {
 
     @PatchMapping("/{id}/release")
     public String releaseBook(@PathVariable("id") int bookId){
-//        booksService.releaseBook(bookId);
+        booksService.updateColumnValue(bookId,null);
         return "redirect:/books/{id}";
     }
     @PatchMapping("/{id}/assign")
     public String assignPerson(@PathVariable("id") int bookId, @ModelAttribute("person") Person person){
-//        booksService.assignPersonToBook(bookId,person.getId());
+        Person personToAssign = peopleService.findOne(person.getId());
+        booksService.updateColumnValue(bookId,personToAssign);
         return "redirect:/books/{id}";
     }
 }

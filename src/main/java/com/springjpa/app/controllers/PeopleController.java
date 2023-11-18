@@ -1,5 +1,6 @@
 package com.springjpa.app.controllers;
 
+import com.springjpa.app.services.BooksService;
 import com.springjpa.app.services.PeopleService;
 import com.springjpa.app.util.PersonValidator;
 import com.springjpa.app.models.Person;
@@ -16,12 +17,14 @@ import javax.validation.Valid;
 public class PeopleController {
 
     private PeopleService peopleService;
+    private BooksService booksService;
     private final PersonValidator personValidator;
 
     @Autowired
-    public PeopleController(PeopleService peopleService, PersonValidator personValidator) {
+    public PeopleController(PeopleService peopleService, PersonValidator personValidator, BooksService booksService) {
         this.peopleService = peopleService;
         this.personValidator = personValidator;
+        this.booksService = booksService;
     }
 
     @GetMapping()
@@ -32,11 +35,12 @@ public class PeopleController {
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
-        model.addAttribute("person", peopleService.findOne(id));
-//        if (peopleService.showPersonsBooks(id).isEmpty()){
-//            model.addAttribute("personsBooksEmpty", "U dannoi persony net vzyatykh knig");
-//        }
-//        model.addAttribute("personsBooks", personDAO.showPersonsBooks(id));
+        Person personToShow = peopleService.findOne(id);
+        model.addAttribute("person", personToShow);
+        if (booksService.findByPersonOfBook(personToShow).isEmpty()){
+            model.addAttribute("personsBooksEmpty", "U dannoi persony net vzyatykh knig");
+        }
+        model.addAttribute("personsBooks", booksService.findByPersonOfBook(personToShow));
         return "people/show";
     }
 
