@@ -12,8 +12,8 @@
     <input type="text" th:field="*{fio}" id="name"/>
     <div style="color:orange" th:if="${#fields.hasErrors('fio')}" th:errors="*{fio}">etot text budet zamenen ili skrit</div>
     <br/>
-    <label for="age">Enter age: </label>
-    <input type="text" th:field="*{bd}" id="age"/>
+    <label for="bd">Enter age: </label>
+    <input type="text" th:field="*{bd}" id="bd"/>
     <div style="color:orange" th:if="${#fields.hasErrors('bd')}" th:errors="*{bd}">etot text budet zamenen ili skrit</div>
     <br/>
     <input type="submit" value="Create!"/>
