@@ -79,13 +79,15 @@ public class BooksController {
 
     @PatchMapping("/{id}/release")
     public String releaseBook(@PathVariable("id") int bookId){
-        booksService.updateColumnValue(bookId,null);
+        booksService.setPersonToBook(bookId,null);
         return "redirect:/books/{id}";
     }
     @PatchMapping("/{id}/assign")
     public String assignPerson(@PathVariable("id") int bookId, @ModelAttribute("person") Person person){
-        Person personToAssign = peopleService.findOne(person.getId());
-        booksService.updateColumnValue(bookId,personToAssign);
+        //Optimisation via proxyObject
+        Person personToAssign = peopleService.getProxyPerson(person.getId());
+//        Person personToAssign = peopleService.findOne(person.getId());
+        booksService.setPersonToBook(bookId,personToAssign);
         return "redirect:/books/{id}";
     }
 }

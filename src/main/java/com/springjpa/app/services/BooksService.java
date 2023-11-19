@@ -3,6 +3,7 @@ package com.springjpa.app.services;
 import com.springjpa.app.models.Book;
 import com.springjpa.app.models.Person;
 import com.springjpa.app.repositories.BooksRepository;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -54,8 +55,8 @@ public class BooksService {
         }
 
     @Transactional
-    public void updateColumnValue(int bookId, Person newValue) {
-        booksRepository.updateColumn(bookId, newValue);
+    public void setPersonToBook(int bookId, Person newPerson) {
+        booksRepository.updatePersonOfBook(bookId, newPerson);
     }
 
         public void test(){

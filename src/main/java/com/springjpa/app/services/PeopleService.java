@@ -1,7 +1,9 @@
 package com.springjpa.app.services;
 
+import com.springjpa.app.dao.PersonDAO;
 import com.springjpa.app.models.Person;
 import com.springjpa.app.repositories.PeopleRepository;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,10 +18,14 @@ import java.util.Optional;
 // makes all public method transactional(readOnly=true) but @Transactional without readnonly will allow the DB write actions
 @Transactional(readOnly = true)
 public class PeopleService {
+
+    private final PersonDAO personDAO;
     private final PeopleRepository peopleRepository;
 
+
     @Autowired
-    public PeopleService(PeopleRepository peopleRepository) {
+    public PeopleService(PersonDAO personDAO, PeopleRepository peopleRepository) {
+        this.personDAO = personDAO;
         this.peopleRepository = peopleRepository;
     }
 
@@ -41,10 +47,22 @@ public class PeopleService {
     public void update(int id, Person updatedPerson) {
         updatedPerson.setId(id);
         //save sees the id and updates instead of creating a new one
-        peopleRepository.save(updatedPerson);}
+        peopleRepository.save(updatedPerson);
+    }
 
-        @Transactional
-        public void delete ( int id){
-            peopleRepository.deleteById(id);
+    @Transactional
+    public void delete(int id) {
+        peopleRepository.deleteById(id);
+    }
+
+    @Transactional
+    public Person getProxyPerson(int personId) {
+        try (Session session = personDAO.getEntityManager().unwrap(Session.class);
+        ) {
+            return session.load(Person.class, personId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
+}

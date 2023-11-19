@@ -19,5 +19,5 @@ public interface BooksRepository extends JpaRepository<Book,Integer> {
     List<Book> findByPersonOfBook(Person person);
     @Modifying
     @Query("UPDATE Book b SET b.personOfBook = :newValue WHERE b.id = :bookId")
-    void updateColumn(@Param("bookId") int bookId, @Param("newValue") Person newValue);
+    void updatePersonOfBook(@Param("bookId") int bookId, @Param("newValue") Person newValue);
 }
