@@ -1,11 +1,10 @@
 package com.springjpa.app.models;
 
-import org.springframework.format.annotation.DateTimeFormat;
+import org.hibernate.annotations.ColumnTransformer;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
-import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -21,10 +20,11 @@ public class Book {
     @Column(name = "author")
     @NotEmpty
     private String author;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Temporal(TemporalType.DATE)
+
     @Column(name = "date")
-    private Date issueDate;
+    @ColumnTransformer(read = "to_char(date, 'YYYY-MM-DD')", write = "to_date(?,'YYYY-MM-DD')")
+    @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}", message = "The format must be 2022-09-29")
+    private String issueDate;
 
     @ManyToOne
     @JoinColumn(name = "person_id", referencedColumnName = "id")
@@ -32,8 +32,7 @@ public class Book {
 
     public Book() {
     }
-
-    public Book(int id, String title, String author, Date issueDate, Person person) {
+    public Book(int id, String title, String author, String issueDate, Person person) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -73,11 +72,11 @@ public class Book {
         this.author = author;
     }
 
-    public Date getIssueDate() {
+    public String getIssueDate() {
         return issueDate;
     }
 
-    public void setIssueDate(Date issueDate) {
+    public void setIssueDate(String issueDate) {
         this.issueDate = issueDate;
     }
 

@@ -9,12 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07b9acd2-8942-4242-86d1-490c304cc8a9" name="Changes" comment="LP Sync">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="07b9acd2-8942-4242-86d1-490c304cc8a9" name="Changes" comment="First commit, laptop">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springjpa/app/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/models/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springjpa/app/util/BookValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/util/BookValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/new.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +35,6 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -208,8 +201,9 @@
       <workItem from="1700163019356" duration="8233000" />
       <workItem from="1700248370411" duration="4587000" />
       <workItem from="1700253922352" duration="2145000" />
-      <workItem from="1700332057146" duration="55000" />
-      <workItem from="1700401338911" duration="6517000" />
+      <workItem from="1700332309782" duration="42000" />
+      <workItem from="1700332365636" duration="6800000" />
+      <workItem from="1700343462213" duration="655000" />
     </task>
     <task id="LOCAL-00001" summary="Classes: Person&#10;DB: person(fio,birthdate)">
       <option name="closed" value="true" />
@@ -283,15 +277,7 @@
       <option name="project" value="LOCAL" />
       <updated>1700084103013</updated>
     </task>
-    <task id="LOCAL-00010" summary="LP Sync">
-      <option name="closed" value="true" />
-      <created>1700332073959</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1700332073959</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,8 +302,7 @@
     <MESSAGE value="ip" />
     <MESSAGE value="Person + Books validators" />
     <MESSAGE value="First commit, laptop" />
-    <MESSAGE value="LP Sync" />
-    <option name="LAST_COMMIT_MESSAGE" value="LP Sync" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit, laptop" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -327,16 +312,6 @@
           <line>24</line>
           <properties field="booksOfPerson" class="com.springjpa.app.models.Person" />
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/springjpa/app/services/BooksService.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/springjpa/app/util/BookValidator.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

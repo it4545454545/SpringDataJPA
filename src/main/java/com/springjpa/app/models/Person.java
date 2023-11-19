@@ -1,5 +1,7 @@
 package com.springjpa.app.models;
 
+import org.hibernate.annotations.ColumnTransformer;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
@@ -17,6 +19,7 @@ public class Person {
     @NotEmpty(message = "Can not be empty, Min 2 - Max 50 symbols")
     @Size(min=2,max=50, message = "Min 2 - Max 50 symbols")
     private String fio;
+    @ColumnTransformer(read = "to_char(birthdate, 'YYYY-MM-DD')", write = "to_date(?,'YYYY-MM-DD')")
     @Column(name = "birthdate")
     @Pattern(regexp = "\\d{4}-\\d{2}-\\d{2}", message = "The format must be 2022-09-29")
     private String bd;
