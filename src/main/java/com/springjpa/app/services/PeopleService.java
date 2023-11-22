@@ -1,6 +1,5 @@
 package com.springjpa.app.services;
 
-import com.springjpa.app.dao.PersonDAO;
 import com.springjpa.app.models.Person;
 import com.springjpa.app.repositories.PeopleRepository;
 import org.hibernate.Session;
@@ -8,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,15 +18,14 @@ import java.util.Optional;
 // makes all public method transactional(readOnly=true) but @Transactional without readnonly will allow the DB write actions
 @Transactional(readOnly = true)
 public class PeopleService {
-
-    private final PersonDAO personDAO;
+    EntityManager entityManager;
     private final PeopleRepository peopleRepository;
 
 
     @Autowired
-    public PeopleService(PersonDAO personDAO, PeopleRepository peopleRepository) {
-        this.personDAO = personDAO;
+    public PeopleService(EntityManager entityManager, PeopleRepository peopleRepository) {
         this.peopleRepository = peopleRepository;
+        this.entityManager = entityManager;
     }
 
     public List<Person> findAll() {
@@ -56,8 +55,8 @@ public class PeopleService {
     }
 
     @Transactional
-    public Person getProxyPerson(int personId) {
-        try (Session session = personDAO.getEntityManager().unwrap(Session.class);
+    public Person getPersonProxy(int personId) {
+        try (Session session = entityManager.unwrap(Session.class);
         ) {
             return session.load(Person.class, personId);
         } catch (Exception e) {
