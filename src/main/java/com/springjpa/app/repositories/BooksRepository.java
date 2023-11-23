@@ -17,6 +17,7 @@ import java.util.List;
 @Repository
 public interface BooksRepository extends JpaRepository<Book,Integer> {
     List<Book> findByPersonOfBook(Person person);
+    long count();
 //    @Modifying
 //    @Query("UPDATE Book b SET b.personOfBook = :newValue WHERE b.id = :bookId")
 //    void updatePersonOfBook(@Param("bookId") int bookId, @Param("newValue") Person newValue);

@@ -37,11 +37,16 @@ public class BooksService {
     public List<Book> findAll() {
         return booksRepository.findAll();
     }
+    public int countAllBooks(){return (int) booksRepository.count();}
 
     //pagination
-    public List<Integer> getPageNumbers(int booksPerPage) {
+    public List<Integer> getPageNumbers(int booksPerPage, int findAllSize) {
+        int numberOfPages;
         if( booksPerPage == 0) booksPerPage = 1;
-        int numberOfPages = findAll().size() / booksPerPage;
+
+        if(booksPerPage >= findAllSize) { numberOfPages = 1;} else {
+
+            numberOfPages = (int) Math.ceil((double) findAllSize / booksPerPage);}
         List<Integer> listOfPages = IntStream.rangeClosed(1, numberOfPages)
                 .boxed()
                 .collect(Collectors.toUnmodifiableList());
@@ -50,6 +55,7 @@ public class BooksService {
     }
 
     public List<Book> findAll(int pageNumber, int booksPerPage) {
+        if (pageNumber > 0) --pageNumber;
         return booksRepository.findAll(PageRequest.of(pageNumber, booksPerPage)).getContent();
     }
 
@@ -60,6 +66,7 @@ public class BooksService {
 
     //pagination + sorting
     public List<Book> findAll(int pageNumber, int booksPerPage, boolean sortByYear) {
+        if (pageNumber > 0) --pageNumber;
         if (sortByYear) {
             return booksRepository.findAll(PageRequest.of(pageNumber, booksPerPage, Sort.by("issueDate"))).getContent();
         } else {
@@ -99,7 +106,7 @@ public class BooksService {
         book.ifPresent(value -> value.setPersonOfBook(newPerson));
     }
 
-    @Transactional
+
     public Optional<Book> getBookProxy(int bookId) {
         try (Session session = entityManager.unwrap(Session.class);
         ) {
@@ -110,8 +117,11 @@ public class BooksService {
         }
     }
 
+
+
     public void test() {
-        System.out.println("f");
+        System.out.println(booksRepository.count());
+        booksRepository.count();
     }
 }
 

@@ -6,13 +6,17 @@
     <title>Index</title>
 </head>
 <body>
-Pages:
-<a th:href="${'/books?page=' + pN + '&perpage='+ currentBooksPerPage}" th:each="pN : ${pageNumbers}" style="text-decoration: none;" th:text="${pN + ' '}"></a>
+<hr/>
+Pages: <br/>
+<a th:href="${'/books?page=' + pN + '&perpage=' + currentBooksPerPage}"
+   th:each="pN, iterStat : ${pageNumbers}"
+   style="text-decoration: none;"
+   th:utext="${pN + ' ' + (iterStat.index > 0 && iterStat.index % 19 == 0 ? '<br/>' : '')}"></a>
+
 </br>
-<p>Books per page</p>
 <form th:method="GET" th:action="@{/books}">
-    <label for="booksperpage"></label>
-    <select id="booksperpage" onchange="window.location.href=this.value">
+    <label for="booksperpage1">Books per page</label>
+    <select id="booksperpage1" onchange="window.location.href=this.value">
         <option th:value="${'/books?page=' + currentPage + '&perpage=' + 1}" th:text="1" th:selected="${currentBooksPerPage == 1}"></option>
         <option th:value="${'/books?page=' + currentPage + '&perpage=' + 2}" th:text="2" th:selected="${currentBooksPerPage == 2}"></option>
         <option th:value="${'/books?page=' + currentPage + '&perpage=' + 5}" th:text="5" th:selected="${currentBooksPerPage == 5}"></option>
@@ -20,7 +24,7 @@ Pages:
         <option th:value="${'/books?page=' + currentPage + '&perpage=' + 20}" th:text="20" th:selected="${currentBooksPerPage == 20}"></option>
         <option th:value="${'/books?page=' + currentPage + '&perpage=' + 50}" th:text="50" th:selected="${currentBooksPerPage == 50}"></option>
     </select>
-</form>
+</form> <hr/>
 <br/>
 
 <div th:each="book : ${books}">
@@ -29,6 +33,25 @@ Pages:
 </div>
 <br/>
 <hr/>
+Pages: <br/>
+<a th:href="${'/books?page=' + pN + '&perpage=' + currentBooksPerPage}"
+   th:each="pN, iterStat : ${pageNumbers}"
+   style="text-decoration: none;"
+   th:utext="${pN + ' ' + (iterStat.index > 0 && iterStat.index % 19 == 0 ? '<br/>' : '')}"></a>
+
+</br>
+<form th:method="GET" th:action="@{/books}">
+    <label for="booksperpage2">Books per page</label>
+    <select id="booksperpage2" onchange="window.location.href=this.value">
+        <option th:value="${'/books?page=' + currentPage + '&perpage=' + 1}" th:text="1" th:selected="${currentBooksPerPage == 1}"></option>
+        <option th:value="${'/books?page=' + currentPage + '&perpage=' + 2}" th:text="2" th:selected="${currentBooksPerPage == 2}"></option>
+        <option th:value="${'/books?page=' + currentPage + '&perpage=' + 5}" th:text="5" th:selected="${currentBooksPerPage == 5}"></option>
+        <option th:value="${'/books?page=' + currentPage + '&perpage=' + 10}" th:text="10" th:selected="${currentBooksPerPage == 10}"></option>
+        <option th:value="${'/books?page=' + currentPage + '&perpage=' + 20}" th:text="20" th:selected="${currentBooksPerPage == 20}"></option>
+        <option th:value="${'/books?page=' + currentPage + '&perpage=' + 50}" th:text="50" th:selected="${currentBooksPerPage == 50}"></option>
+    </select>
+</form> <hr/>
+<br/>
 <a href="/books/new">Create new book</a>
 
 </body>

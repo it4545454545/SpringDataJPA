@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/books")
@@ -34,27 +35,47 @@ public class BooksController {
 
     @GetMapping()
     public String index(Model model,
-                        @RequestParam(value = "page", required = false) Integer pageNumber,
+                        @RequestParam(value = "page", required = false) Integer currentPageNumber,
                         @RequestParam(value = "perpage", required = false) Integer booksPerPage,
                         @RequestParam(value = "sortbyyear", required = false) Integer sortByYear
     ) {
-        boolean sby_flag = sortByYear != null && sortByYear == 1;
-        if ((pageNumber != null) && (booksPerPage != null)) {
-            if (sby_flag) {
-                model.addAttribute("books", booksService.findAll(pageNumber, booksPerPage, true));
-            } else {
-                model.addAttribute("books", booksService.findAll(pageNumber, booksPerPage));
-            }
+        int countOfBooks = booksService.countAllBooks();
+        List<Integer> pageNumbers;
+        int maxPageCount;
+        if (booksPerPage != null) {
+            maxPageCount = booksService.getPageNumbers(booksPerPage, countOfBooks).size();
         } else {
-            if(booksPerPage == null) booksPerPage = 50;
-            if(pageNumber == null) pageNumber = 1;
+            maxPageCount = countOfBooks;
+        }
+
+        if (currentPageNumber != null) {
+            if (currentPageNumber > maxPageCount) {
+                if (booksPerPage != null) {
+                    return "redirect:/books?page=1&perpage=" + booksPerPage;
+                }
+                return "redirect:/books?page=1";
+            }
+        }
+
+        boolean sby_flag = sortByYear != null && sortByYear == 1;
+        if ((currentPageNumber != null) && (booksPerPage != null)) {
+            if (sby_flag) {
+                model.addAttribute("books", booksService.findAll(currentPageNumber, booksPerPage, true));
+            } else {
+                model.addAttribute("books", booksService.findAll(currentPageNumber, booksPerPage));
+            }
+            pageNumbers = booksService.getPageNumbers(booksPerPage, countOfBooks);
+        } else {
+            if (booksPerPage == null) booksPerPage = 50;
+            if (currentPageNumber == null) currentPageNumber = 1;
             if (sby_flag) {
                 model.addAttribute("books", booksService.findAll(true));
             } else model.addAttribute("books", booksService.findAll());
+            pageNumbers = booksService.getPageNumbers(booksPerPage, countOfBooks);
         }
 
-        model.addAttribute("pageNumbers", booksService.getPageNumbers(booksPerPage));
-        model.addAttribute("currentPage", pageNumber);
+        model.addAttribute("pageNumbers", pageNumbers);
+        model.addAttribute("currentPage", currentPageNumber);
         model.addAttribute("currentBooksPerPage", booksPerPage);
 
         return "books/index";

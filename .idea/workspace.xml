@@ -9,8 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07b9acd2-8942-4242-86d1-490c304cc8a9" name="Changes" comment="Optimisation of Assignation, LP sync">
+    <list default="true" id="07b9acd2-8942-4242-86d1-490c304cc8a9" name="Changes" comment="sync PC">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springjpa/app/controllers/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/controllers/BooksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springjpa/app/repositories/BooksRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/repositories/BooksRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springjpa/app/services/BooksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/services/BooksService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +41,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -205,10 +208,12 @@
       <workItem from="1700163019356" duration="8233000" />
       <workItem from="1700248370411" duration="4587000" />
       <workItem from="1700253922352" duration="2145000" />
-      <workItem from="1700332057146" duration="55000" />
-      <workItem from="1700401338911" duration="10907000" />
-      <workItem from="1700678083644" duration="11895000" />
-      <workItem from="1700733077520" duration="2445000" />
+      <workItem from="1700332309782" duration="42000" />
+      <workItem from="1700332365636" duration="6800000" />
+      <workItem from="1700343462213" duration="655000" />
+      <workItem from="1700427671382" duration="25000" />
+      <workItem from="1700593066833" duration="1061000" />
+      <workItem from="1700737363940" duration="26518000" />
     </task>
     <task id="LOCAL-00001" summary="Classes: Person&#10;DB: person(fio,birthdate)">
       <option name="closed" value="true" />
@@ -282,35 +287,38 @@
       <option name="project" value="LOCAL" />
       <updated>1700084103013</updated>
     </task>
-    <task id="LOCAL-00010" summary="LP Sync">
+    <task id="LOCAL-00010" summary="sync PC">
       <option name="closed" value="true" />
-      <created>1700332073959</created>
+      <created>1700421673690</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1700332073959</updated>
+      <updated>1700421673690</updated>
     </task>
-    <task id="LOCAL-00011" summary="LP sync">
+    <task id="LOCAL-00011" summary="sync PC">
       <option name="closed" value="true" />
-      <created>1700408504933</created>
+      <created>1700427689041</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1700408504933</updated>
+      <updated>1700427689041</updated>
     </task>
-    <task id="LOCAL-00012" summary="Optimisation of Assignation, LP sync">
-      <option name="closed" value="true" />
-      <created>1700434277062</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1700434277062</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -331,32 +339,8 @@
     <MESSAGE value="ip" />
     <MESSAGE value="Person + Books validators" />
     <MESSAGE value="First commit, laptop" />
-    <MESSAGE value="LP Sync" />
-    <MESSAGE value="LP sync" />
-    <MESSAGE value="Optimisation of Assignation, LP sync" />
-    <option name="LAST_COMMIT_MESSAGE" value="Optimisation of Assignation, LP sync" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/com/springjpa/app/models/Person.java</url>
-          <line>27</line>
-          <properties field="booksOfPerson" class="com.springjpa.app.models.Person" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/springjpa/app/util/BookValidator.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/springjpa/app/controllers/BooksController.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="sync PC" />
+    <option name="LAST_COMMIT_MESSAGE" value="sync PC" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
