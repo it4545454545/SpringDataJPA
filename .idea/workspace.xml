@@ -12,8 +12,8 @@
     <list default="true" id="07b9acd2-8942-4242-86d1-490c304cc8a9" name="Changes" comment="sync PC">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springjpa/app/controllers/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/controllers/BooksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springjpa/app/repositories/BooksRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/repositories/BooksRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/springjpa/app/services/BooksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/services/BooksService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springjpa/app/util/BookValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/util/BookValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -213,7 +213,7 @@
       <workItem from="1700343462213" duration="655000" />
       <workItem from="1700427671382" duration="25000" />
       <workItem from="1700593066833" duration="1061000" />
-      <workItem from="1700737363940" duration="26518000" />
+      <workItem from="1700737363940" duration="29589000" />
     </task>
     <task id="LOCAL-00001" summary="Classes: Person&#10;DB: person(fio,birthdate)">
       <option name="closed" value="true" />
@@ -303,7 +303,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700427689041</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="sync PC">
+      <option name="closed" value="true" />
+      <created>1700770735023</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1700770735023</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -341,6 +349,44 @@
     <MESSAGE value="First commit, laptop" />
     <MESSAGE value="sync PC" />
     <option name="LAST_COMMIT_MESSAGE" value="sync PC" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springjpa/app/models/Book.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springjpa/app/services/BooksService.java</url>
+          <line>106</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springjpa/app/services/BooksService.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springjpa/app/services/BooksService.java</url>
+          <line>111</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springjpa/app/services/BooksService.java</url>
+          <line>110</line>
+          <properties class="com.springjpa.app.services.BooksService" method="getBookProxy">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

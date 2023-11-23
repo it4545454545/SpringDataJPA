@@ -29,9 +29,10 @@ public class BooksService {
     EntityManager entityManager;
 
     @Autowired
-    public BooksService(BooksRepository booksRepository, PeopleService peopleService) {
+    public BooksService(BooksRepository booksRepository, PeopleService peopleService,EntityManager entityManager) {
         this.booksRepository = booksRepository;
         this.peopleService = peopleService;
+        this.entityManager = entityManager;
     }
 
     public List<Book> findAll() {

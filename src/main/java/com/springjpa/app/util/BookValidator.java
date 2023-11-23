@@ -26,18 +26,17 @@ public class BookValidator implements Validator {
     @Override
     public void validate(Object o, Errors errors) {
 //        Book book = (Book) o;
-        if (errors.hasErrors()) {
-            switch (Objects.requireNonNull(errors.getFieldError()).getField()){
-                case "issueDate" -> errors.rejectValue("issueDate", "", "11Invalid date. Also, the format must be 2022-01-09 (year-month-day)");
-                default -> errors.rejectValue("", "", "An error occurred");
+        if (!errors.hasErrors()) {
+            if (!isValidDateFormat((String) errors.getFieldValue("issueDate"))) {
+                errors.rejectValue("issueDate", "", "Invalid date. Also, the format must be 2022-01-09 (year-month-day)");
             }
         }
     }
 
-    private boolean isValidDateFormat(Date date) {
+    private boolean isValidDateFormat(String date) {
         try {
-            System.out.println(date.toString());
-        } catch (Exception ex) {
+            LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        } catch (DateTimeParseException ex) {
             return false;
         }
 //        Pattern pattern = Pattern.compile(DATE_FORMAT_REGEX);

@@ -58,6 +58,7 @@ public class BooksController {
         }
 
         boolean sby_flag = sortByYear != null && sortByYear == 1;
+
         if ((currentPageNumber != null) && (booksPerPage != null)) {
             if (sby_flag) {
                 model.addAttribute("books", booksService.findAll(currentPageNumber, booksPerPage, true));

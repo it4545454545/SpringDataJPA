@@ -6,6 +6,18 @@
     <title>Index</title>
 </head>
 <body>
+<form th:method="GET" th:action="@{/books}">
+    <label>
+        <input type="checkbox" name="sortbyyearCheckbox" th:attr="checked=${sortbyyear}" th:onchange="this.form.submit()"/>
+        Sort by issue date
+    </label>
+    <input type="hidden" name="sortbyyear" th:value="${sortbyyear == 'on' ? '1' : '0'}"/>
+</form>
+
+
+
+
+
 <hr/>
 Pages: <br/>
 <a th:href="${'/books?page=' + pN + '&perpage=' + currentBooksPerPage}"
@@ -24,7 +36,8 @@ Pages: <br/>
         <option th:value="${'/books?page=' + currentPage + '&perpage=' + 20}" th:text="20" th:selected="${currentBooksPerPage == 20}"></option>
         <option th:value="${'/books?page=' + currentPage + '&perpage=' + 50}" th:text="50" th:selected="${currentBooksPerPage == 50}"></option>
     </select>
-</form> <hr/>
+</form>
+<hr/>
 <br/>
 
 <div th:each="book : ${books}">
