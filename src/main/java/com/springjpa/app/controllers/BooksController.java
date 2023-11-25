@@ -62,8 +62,10 @@ public class BooksController {
         if ((currentPageNumber != null) && (booksPerPage != null)) {
             if (sby_flag) {
                 model.addAttribute("books", booksService.findAll(currentPageNumber, booksPerPage, true));
+                model.addAttribute("sortingFlag", true);
             } else {
                 model.addAttribute("books", booksService.findAll(currentPageNumber, booksPerPage));
+                model.addAttribute("sortingFlag", false);
             }
             pageNumbers = booksService.getPageNumbers(booksPerPage, countOfBooks);
         } else {
@@ -71,7 +73,11 @@ public class BooksController {
             if (currentPageNumber == null) currentPageNumber = 1;
             if (sby_flag) {
                 model.addAttribute("books", booksService.findAll(true));
-            } else model.addAttribute("books", booksService.findAll());
+                model.addAttribute("sortingFlag", true);
+            } else {
+                model.addAttribute("books", booksService.findAll());
+                model.addAttribute("sortingFlag", false);
+            }
             pageNumbers = booksService.getPageNumbers(booksPerPage, countOfBooks);
         }
 

@@ -1,0 +1,15 @@
+<form th:method="GET" th:action="@{/books}">
+    <label>
+        <input th:type="checkbox" th:name="${'sortbyyearCheckbox'}" th:onchange="this.form.submit()" th:checked="${sortingFlag}"/>
+        Sort by issue date
+    </label>
+    <input type="hidden" th:name="page" th:value="${#strings.isEmpty(currentPage) ? '' : currentPage}"/>
+    <input type="hidden" th:name="perpage" th:value="${#strings.isEmpty(currentBooksPerPage) ? '' : currentBooksPerPage}"/>
+    <input type="hidden" th:name="sortbyyear" th:value="${sortingFlag == true ? '0' : '1'}"/>
+</form>
+
+
+<span th:if="${pN == currentPage}" th:utext="${pN}"></span>
+<span th:utext="${(iterStat.index > 0 && iterStat.index % 19 == 0) ? 'aaaaaaaaaaa' : ''}"></span>
+
+   th:utext="${pN + ' ' + (iterStat.index > 0 && iterStat.index % 19 == 0 ? '<br/>' : '')}"></a>

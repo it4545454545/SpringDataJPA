@@ -9,7 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07b9acd2-8942-4242-86d1-490c304cc8a9" name="Changes" comment="sync PC" />
+    <list default="true" id="07b9acd2-8942-4242-86d1-490c304cc8a9" name="Changes" comment="sync PC">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/backupfiles/copypasteBAK" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springjpa/app/controllers/BooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springjpa/app/controllers/BooksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,6 +213,8 @@
       <workItem from="1700427671382" duration="25000" />
       <workItem from="1700593066833" duration="1061000" />
       <workItem from="1700737363940" duration="29694000" />
+      <workItem from="1700936350923" duration="116000" />
+      <workItem from="1700936477133" duration="12437000" />
     </task>
     <task id="LOCAL-00001" summary="Classes: Person&#10;DB: person(fio,birthdate)">
       <option name="closed" value="true" />
@@ -377,6 +384,16 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/springjpa/app/services/BooksService.java</url>
           <line>111</line>
           <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springjpa/app/controllers/BooksController.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/springjpa/app/controllers/BooksController.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/springjpa/app/services/BooksService.java</url>
