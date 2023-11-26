@@ -26,8 +26,9 @@ Pages: <br/>
     <span th:if="${pN == currentPage}" th:utext="${pN}" style="font-size: 18px;"></span>
     <a th:if="${pN != currentPage}"
        th:href="${'/books?page=' + pN + '&perpage=' + currentBooksPerPage + (sortingFlag ? '&sortbyyear=' + 1 : '')}"
+       th:utext="${pN}"
        style="text-decoration: none;"
-       th:utext="${pN}"></a>
+    ></a>
     <br th:if="${iterStat.index > 0 && iterStat.index % 19 == 0}"/>
 </div>
 
