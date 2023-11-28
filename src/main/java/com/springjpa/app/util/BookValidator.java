@@ -1,17 +1,13 @@
 package com.springjpa.app.util;
 
 import com.springjpa.app.models.Book;
-import org.springframework.beans.TypeMismatchException;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.Date;
-import java.util.Objects;
 
 @Component
 public class BookValidator implements Validator {
@@ -44,4 +40,5 @@ public class BookValidator implements Validator {
 //        return matcher.matches();
         return true;
     }
+
 }

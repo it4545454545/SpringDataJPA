@@ -4,7 +4,7 @@ import com.springjpa.app.models.Book;
 import com.springjpa.app.models.Person;
 import com.springjpa.app.services.BooksService;
 import com.springjpa.app.services.PeopleService;
-import com.springjpa.app.util.BookValidator;
+import com.springjpa.app.util.BookSearchTextValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,10 +19,10 @@ import java.util.List;
 public class BooksController {
     private final BooksService booksService;
     private final PeopleService peopleService;
-    private final BookValidator bookValidator;
+    private final BookSearchTextValidator bookValidator;
 
     @Autowired
-    public BooksController(BooksService bookDAO, BookValidator bookValidator, PeopleService peopleService) {
+    public BooksController(BooksService bookDAO, BookSearchTextValidator bookValidator, PeopleService peopleService) {
         this.booksService = bookDAO;
         this.bookValidator = bookValidator;
         this.peopleService = peopleService;
@@ -147,6 +147,15 @@ public class BooksController {
         Person personToAssign = peopleService.getPersonProxy(person.getId());
         booksService.setPersonToBook(bookId, personToAssign);
         return "redirect:/books/{id}";
+    }
+
+    @PostMapping("books/search")
+    public String searchBook(@ModelAttribute("string") @Valid String searchText, BindingResult bindingResult,Model model){
+//        bookValidator.validateSearchQuery(searchText);
+        if (bindingResult.hasErrors()) return "/books/index";
+        model.addAttribute("booksFound", booksService.findByTitleIsLikeIgnoreCase(searchText));
+
+        return "redirect:/books";
     }
 }
 

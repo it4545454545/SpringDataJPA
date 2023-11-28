@@ -1,9 +1,9 @@
 package com.springjpa.app.controllers;
 
+import com.springjpa.app.models.Person;
 import com.springjpa.app.services.BooksService;
 import com.springjpa.app.services.PeopleService;
 import com.springjpa.app.util.PersonValidator;
-import com.springjpa.app.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

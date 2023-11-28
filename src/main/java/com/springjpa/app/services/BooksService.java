@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -116,6 +115,9 @@ public class BooksService {
             e.printStackTrace();
             return Optional.empty();
         }
+    }
+    public List<Book> findByTitleIsLikeIgnoreCase(String searchText){
+        return booksRepository.findByTitleIsLikeIgnoreCase(searchText);
     }
 
 
