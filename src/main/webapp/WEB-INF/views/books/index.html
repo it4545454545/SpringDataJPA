@@ -18,11 +18,11 @@
 
         #bookList {
             flex: 1;
-            margin-right: 20px; /* Регулируйте отступ справа от списка книг */
+            margin-right: 20px;
         }
 
         #bookList div {
-            margin-bottom: 6px; /* Регулируйте отступ между книгами */
+            margin-bottom: 6px;
         }
     </style>
 </head>
@@ -102,11 +102,12 @@ Pages: <br/>
 <br/>
 <a href="/books/new">Create new book</a>
 </div>
-<form id="searchForm" method="POST" th:action="@{/books/search}" th:object="string">
+<form id="searchForm" method="POST" th:action="@{/books/search}" th:object="${searchText}">
     <label for="search">Search:</label>
-    <input type="text" id="search" name="search" maxlength="150">
+    <input type="text" id="search" name="search" maxlength="150" />
     <button type="submit">Submit</button>
 </form>
+
 
 </body>
 </html>

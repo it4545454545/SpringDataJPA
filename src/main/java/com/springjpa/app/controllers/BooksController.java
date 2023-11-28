@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 @Controller
@@ -51,8 +52,10 @@ public class BooksController {
         if (currentPageNumber != null) {
             if (currentPageNumber > maxPageCount) {
                 if (booksPerPage != null) {
+                    model.addAttribute("searchText", "");
                     return "redirect:/books?page=1&perpage=" + booksPerPage;
                 }
+                model.addAttribute("searchText", "");
                 return "redirect:/books?page=1";
             }
         }
@@ -85,6 +88,7 @@ public class BooksController {
         model.addAttribute("currentPage", currentPageNumber);
         model.addAttribute("currentBooksPerPage", booksPerPage);
 
+        model.addAttribute("searchText", "");
         return "books/index";
     }
 
@@ -149,13 +153,15 @@ public class BooksController {
         return "redirect:/books/{id}";
     }
 
-    @PostMapping("books/search")
-    public String searchBook(@ModelAttribute("string") @Valid String searchText, BindingResult bindingResult,Model model){
-//        bookValidator.validateSearchQuery(searchText);
-        if (bindingResult.hasErrors()) return "/books/index";
+    @PostMapping("/search")
+    public String searchBook(@ModelAttribute("searchText") @Pattern(regexp = "[A-z0-9]{4,20}", message = "TTTTTTTV") String searchText,
+                             BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            return "/books/index";
+        }
         model.addAttribute("booksFound", booksService.findByTitleIsLikeIgnoreCase(searchText));
-
         return "redirect:/books";
     }
+
 }
 
