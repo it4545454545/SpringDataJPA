@@ -103,7 +103,7 @@ public class BooksService {
     @Transactional
     public void setPersonToBook(int bookId, Person newPerson) {
         Optional<Book> book = getBookProxy(bookId);
-        book.ifPresent(value -> value.setPersonOfBook(newPerson));
+       book.ifPresent(value -> value.setPersonOfBook(newPerson));
     }
 
 

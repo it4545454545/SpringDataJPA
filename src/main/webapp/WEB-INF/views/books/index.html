@@ -12,7 +12,10 @@
     <input type="submit" value="Search"/>
 </form>
 
-
+<br>
+<th:block  th:each="book : ${booksFound}">
+    <span th:utext="${book.title} + '<br/>'"></span>
+</th:block>
 
 
 

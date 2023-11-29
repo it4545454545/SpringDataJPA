@@ -158,10 +158,10 @@ public class BooksController {
     public String searchBook(@ModelAttribute("searchBook") Book searchBook,
                              BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            return "redirect:/books";
+            return "books/index";
         }
         model.addAttribute("booksFound", booksService.findByTitleIsLikeIgnoreCase(searchBook));
-        return "redirect:/books";
+        return "books/index";
     }
 //    @PostMapping()
 //    public String create(@ModelAttribute("book") @Valid Book book, BindingResult bindingResult) {
