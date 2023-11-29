@@ -4,29 +4,20 @@
     <link rel="icon" href="/static/favicon.ico" type="image/png">
     <meta charset="UTF-8">
     <title>Index</title>
-    <style>
-        body {
-            display: flex;
-        }
-
-        #searchForm {
-            width: 200px;
-            height: 300px;
-            margin-top: 10px;
-            margin-left: auto;
-        }
-
-        #bookList {
-            flex: 1;
-            margin-right: 20px;
-        }
-
-        #bookList div {
-            margin-bottom: 6px;
-        }
-    </style>
 </head>
 <body>
+<form th:method="POST" th:action="@{/books/search}" th:object="${searchBook}">
+    <label for="search"></label>
+    <input type="text" id="search" th:field="*{title}"/>
+    <input type="submit" value="Search"/>
+</form>
+
+
+
+
+
+
+
 <div id="bookList">
 <form th:method="GET" th:action="@{/books}">
     <label>
@@ -102,11 +93,7 @@ Pages: <br/>
 <br/>
 <a href="/books/new">Create new book</a>
 </div>
-<form id="searchForm" method="POST" th:action="@{/books/search}" th:object="${searchText}">
-    <label for="search">Search:</label>
-    <input type="text" id="search" name="search" maxlength="150" />
-    <button type="submit">Submit</button>
-</form>
+
 
 
 </body>

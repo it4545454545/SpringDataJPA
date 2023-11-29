@@ -38,7 +38,8 @@ public class BooksController {
     public String index(Model model,
                         @RequestParam(value = "page", required = false) Integer currentPageNumber,
                         @RequestParam(value = "perpage", required = false) Integer booksPerPage,
-                        @RequestParam(value = "sortbyyear", required = false) Integer sortByYear
+                        @RequestParam(value = "sortbyyear", required = false) Integer sortByYear,
+                        @ModelAttribute("searchBook") Book searchBook
     ) {
         int countOfBooks = booksService.countAllBooks();
         List<Integer> pageNumbers;
@@ -154,14 +155,21 @@ public class BooksController {
     }
 
     @PostMapping("/search")
-    public String searchBook(@ModelAttribute("searchText") @Pattern(regexp = "[A-z0-9]{4,20}", message = "TTTTTTTV") String searchText,
+    public String searchBook(@ModelAttribute("searchBook") Book searchBook,
                              BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
-            return "/books/index";
+            return "redirect:/books";
         }
-        model.addAttribute("booksFound", booksService.findByTitleIsLikeIgnoreCase(searchText));
+        model.addAttribute("booksFound", booksService.findByTitleIsLikeIgnoreCase(searchBook));
         return "redirect:/books";
     }
+//    @PostMapping()
+//    public String create(@ModelAttribute("book") @Valid Book book, BindingResult bindingResult) {
+//        bookValidator.validate(book, bindingResult);
+//        if (bindingResult.hasErrors()) return "books/new";
+//        booksService.save(book);
+//        return "redirect:/books";
+//    }
 
 }
 
