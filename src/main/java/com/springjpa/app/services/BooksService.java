@@ -116,8 +116,8 @@ public class BooksService {
             return Optional.empty();
         }
     }
-    public List<Book> findByTitleIsLikeIgnoreCase(Book searchBook){
-        return booksRepository.findByTitleIsLikeIgnoreCase(searchBook.getTitle());
+    public List<Book> findByTitleIsLikeIgnoreCase(String title){
+        return booksRepository.findByTitleIsLikeIgnoreCase("%" + title + "%");
     }
 
 

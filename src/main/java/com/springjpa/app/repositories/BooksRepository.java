@@ -19,5 +19,5 @@ public interface BooksRepository extends JpaRepository<Book,Integer> {
 //    @Query("UPDATE Book b SET b.personOfBook = :newValue WHERE b.id = :bookId")
 //    void updatePersonOfBook(@Param("bookId") int bookId, @Param("newValue") Person newValue);
 
-    List<Book> findByTitleIsLikeIgnoreCase(String string);
+    List<Book> findByTitleIsLikeIgnoreCase(String title);
 }

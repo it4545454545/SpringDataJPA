@@ -9,19 +9,22 @@
 <form th:method="POST" th:action="@{/books/search}" th:object="${searchBook}">
     <label for="search"></label>
     <input type="text" id="search" th:field="*{title}"/>
+    <div style="color:orange" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">etot text budet zamenen ili skrit</div>
     <input type="submit" value="Search"/>
 </form>
 
-<br>
-<th:block  th:each="book : ${booksFound}">
-    <span th:utext="${book.title} + '<br/>'"></span>
+<th:block th:if="${hideOptions}"><br>
+    <span th:if="${booksFound.isEmpty()}">No books found</span>
 </th:block>
 
+<div th:each="book : ${booksFound}">
+    <a th:href="@{/books/{id}(id=${book.getId()})}">>></a>
+    <span th:text="${book.getAuthor() + ', ' + book.getTitle() + ', ' + book.getIssueDate()}"></span>
+</div>
+<br/>
 
+<th:block th:if="${!hideOptions}">
 
-
-
-<div id="bookList">
 <form th:method="GET" th:action="@{/books}">
     <label>
         <input th:type="checkbox" name="" th:onchange="this.form.submit()" th:checked="${sortingFlag}"/>
@@ -92,10 +95,12 @@ Pages: <br/>
                 th:selected="${currentBooksPerPage == 50}"></option>
     </select>
 </form>
+</th:block>
+
 <hr/>
 <br/>
 <a href="/books/new">Create new book</a>
-</div>
+
 
 
 
