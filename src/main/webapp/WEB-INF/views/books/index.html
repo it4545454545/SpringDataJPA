@@ -19,7 +19,15 @@
 
 <div th:each="book : ${booksFound}">
     <a th:href="@{/books/{id}(id=${book.getId()})}">>></a>
-    <span th:text="${book.getAuthor() + ', ' + book.getTitle() + ', ' + book.getIssueDate()}"></span>
+    <span th:utext="${book.getAuthor() + ', ' + book.getTitle() + ', ' + book.getIssueDate() + '<br/>'}"></span>
+
+    <th:block th:if="${book.getPersonOfBook() != null}">
+        <span>Person assigned: </span>
+        <a th:href="${'/people/'+book.getPersonOfBook().getId()}"
+       th:utext="${book.getPersonOfBook().getFio()}"></a>
+    </th:block>
+
+    <span th:if="${book.getPersonOfBook() == null}" th:utext="'Book is free'"></span>
 </div>
 <br/>
 
