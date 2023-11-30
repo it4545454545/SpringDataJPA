@@ -19,7 +19,9 @@
 
 <div th:each="book : ${booksFound}">
     <a th:href="@{/books/{id}(id=${book.getId()})}">>></a>
-    <span th:utext="${book.getAuthor() + ', ' + book.getTitle() + ', ' + book.getIssueDate() + '<br/>'}"></span>
+    <span th:style="${book.isOverdue() ? 'color: red;' : ''}" th:utext="${book.getAuthor() + ', ' + book.getTitle() + ', ' + book.getIssueDate()
+    + (book.isOverdue() ? ' | Overdue: ' + 'since ' + book.getTimestamp().toLocalDateTime().format(overdueFormat) : '')
+    + '<br/>'}"></span>
 
     <th:block th:if="${book.getPersonOfBook() != null}">
         <span>Person assigned: </span>

@@ -11,8 +11,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -132,11 +134,18 @@ public class BooksService {
         }
     }
     public List<Book> findByTitleIsLikeIgnoreCase(String title){
-        return booksRepository.findByTitleIsLikeIgnoreCase("%" + title + "%");
+        List<Book> bookList = booksRepository.findByTitleIsLikeIgnoreCase("%" + title + "%");;
+        bookList.forEach(book -> book.setOverdue(checkOverdue(book.getId())));
+        return bookList;
     }
     @Transactional
     public void setTimestamp(int bookId){
         findOne(bookId).setTimestamp(new Timestamp(System.currentTimeMillis()));
+    }
+
+    @Transactional
+    public void releaseTimestamp(int bookId){
+        findOne(bookId).setTimestamp(Timestamp.valueOf("9999-12-31 00:00:00.000000"));
     }
 
     public boolean checkOverdue(int bookId){

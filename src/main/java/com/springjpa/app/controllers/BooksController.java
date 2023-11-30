@@ -148,6 +148,7 @@ public class BooksController {
     @PatchMapping("/{id}/release")
     public String releaseBook(@PathVariable("id") int bookId) {
         booksService.setPersonToBook(bookId, null);
+        booksService.releaseTimestamp(bookId);
         return "redirect:/books/{id}";
     }
 
@@ -169,6 +170,7 @@ public class BooksController {
         }
         model.addAttribute("booksFound", booksService.findByTitleIsLikeIgnoreCase(searchBook.getTitle()));
         model.addAttribute("hideOptions", true);
+        model.addAttribute("overdueFormat", booksService.overdueFormat());
         return "books/index";
     }
 }
