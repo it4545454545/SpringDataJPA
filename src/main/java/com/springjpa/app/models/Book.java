@@ -5,6 +5,7 @@ import org.hibernate.annotations.ColumnTransformer;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
+import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
@@ -30,6 +31,10 @@ public class Book {
     @JoinColumn(name = "person_id", referencedColumnName = "id")
     private Person personOfBook;
 
+    @Column(name = "assign_timestamp")
+    private Timestamp timestamp;
+    @Transient
+    private boolean isOverdue;
     public Book() {
     }
     public Book(int id, String title, String author, String issueDate, Person person) {
@@ -78,6 +83,21 @@ public class Book {
 
     public void setIssueDate(String issueDate) {
         this.issueDate = issueDate;
+    }
+
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
+    }
+    public boolean isOverdue() {
+        return isOverdue;
+    }
+
+    public void setOverdue(boolean overdue) {
+        isOverdue = overdue;
     }
 
     @Override

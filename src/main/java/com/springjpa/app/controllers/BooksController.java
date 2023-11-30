@@ -94,6 +94,7 @@ public class BooksController {
 
         model.addAttribute("searchText", "");
         model.addAttribute("hideOptions", false);
+        model.addAttribute("overdueFormat", booksService.overdueFormat());
         return "books/index";
     }
 
@@ -155,6 +156,7 @@ public class BooksController {
         //Optimisation via proxyObject
         Person personToAssign = peopleService.getPersonProxy(person.getId());
         booksService.setPersonToBook(bookId, personToAssign);
+        booksService.setTimestamp(bookId);
         return "redirect:/books/{id}";
     }
 
@@ -169,13 +171,5 @@ public class BooksController {
         model.addAttribute("hideOptions", true);
         return "books/index";
     }
-//    @PostMapping()
-//    public String create(@ModelAttribute("book") @Valid Book book, BindingResult bindingResult) {
-//        bookValidator.validate(book, bindingResult);
-//        if (bindingResult.hasErrors()) return "books/new";
-//        booksService.save(book);
-//        return "redirect:/books";
-//    }
-
 }
 
